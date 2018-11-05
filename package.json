@@ -1,0 +1,19 @@
+{
+  "name": "nwjs-builder",
+  "version": "1.0.0",
+  "description": "NW.js build environment",
+  "scripts": {
+    "build": "docker build -t enfunctor/nwjs .circleci",
+    "push":"docker push enfunctor/nwjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enfunctor/nwjs-builder.git"
+  },
+  "author": "enfunctor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enfunctor/nwjs-builder/issues"
+  },
+  "homepage": "https://github.com/enfunctor/nwjs-builder#readme"
+}
