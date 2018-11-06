@@ -1,0 +1,18 @@
+version: 2
+
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Login to dockerhub
+          command: echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
+      - run: docker build -t enfunctor/nwjs-builder .
+      - run: docker push enfunctor/nwjs-builder
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+    - build
